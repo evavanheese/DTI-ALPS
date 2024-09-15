@@ -13,7 +13,7 @@ Taoka and colleagues ([Taoka et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28197
 The DTI processing can be performed with any preferred software. For ROI drawing, you require software to open FA maps and draw a region to extract diffusivity values from. This could for example be done using FSLeyes and FSLmaths/stats. 
 
 ## 1) Standard DTI processing
-Process as usual. Note that you need to output the tensor as this is usually not part of the default output. In dtifit from FSL this can be done with the `--save-tensor` flag:
+Process as usual. Note that you need to output the tensor as this is usually not part of the default output (also see [perform_DTIfit.sh](https://github.com/evavanheese/DTI-ALPS/blob/main/perform_DTIfit.sh)). In dtifit from FSL this can be done with the `--save-tensor` flag:
 ```
 dtifit --data=${sub}_eddy_corrected_data.nii --out=${sub} --mask=${sub}_brain_mask.nii.gz --bvecs=${sub}_eddy_corrected_rotated_bvecs.bvec --bvals=${sub}.bval --save_tensor
 ```
@@ -98,6 +98,10 @@ FAQ's:
 
 Useful sources:
 [FSLeyes](https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html)
+
+Available code:
+Please see [extract_diff_from_mask.sh](https://github.com/evavanheese/DTI-ALPS/blob/main/extract_diff_from_mask.sh) to extract the diffusivities from the mask.
+Please see [calculate_DTI_ALPS_index_v2.ipynb](https://github.com/evavanheese/DTI-ALPS/blob/main/calculate_DTI_ALPS_index_v2.ipynb) to calculate the DTI-ALPS index.
 
 ## 3) Calculating the DTI-ALPS index
 We calculate the DTI-ALPS index according to the following formula:
